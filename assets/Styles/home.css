@@ -1,420 +1,437 @@
+/* Reset básico */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-    font-family: "Titillium Web", serif;
+  font-family: "Titillium Web", serif;
 }
 
 /* NAVBAR */
-
-/* Estilo básico do botão */
-.footer-button {
-    background-color: #ff6f61; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    border: 2px solid transparent; /* Borda inicial transparente */
-    padding: 10px 20px; /* Padding do botão */
-    font-size: 1.2em;
-    text-transform: uppercase;
-    cursor: pointer; /* Muda o cursor para indicar interatividade */
-    position: relative; /* Necessário para o efeito da borda */
-    overflow: hidden; /* Garante que o efeito não ultrapasse os limites do botão */
-    transition: all 0.3s ease; /* Transição suave */
-}
-
-/* Efeito ao passar o mouse */
-.footer-button:hover {
-    background-color: #fff; /* Cor de fundo ao passar o mouse */
-    color: #f13232; /* Cor do texto ao passar o mouse */
-    border-color: #f13232; /* Borda ao passar o mouse */
-}
-
-/* Efeito de borda animada */
-.footer-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background-color: #f13232; /* Cor da borda */
-    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease; /* Animação da expansão */
-    border-radius: 50%;
-    z-index: 0; /* Coloca a animação atrás do texto */
-    transform: translate(-50%, -53%); /* Centraliza a animação */
-}
-
-/* Efeito da borda expandindo ao passar o mouse */
-.footer-button:hover::before {
-    width: 500%;
-    height: 500%;
-    top: -150%;
-    left: -150%;
-}
-
-.footer-button span {
-    position: relative;
-    z-index: 1; /* Garante que o texto fique acima da animação */
-}
-
 .nav {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 10vh;
-    background-color: black;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: black;
+  padding: 0 10px; /* Ajuste da margem para pequenos dispositivos */
 }
 
 .nav ul {
-    display: flex;
-    list-style-type: none;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
 }
 
 .nav li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 .nav img {
-    height: 80px;
-    margin-right: auto;
+  height: 80px;
 }
 
 .nav a {
-    text-decoration: none;
-    color: #f13232;
-    font-size: 25px;
-    position: relative;
+  text-decoration: none;
+  color: #f13232;
+  font-size: 25px;
+  position: relative;
 }
 
+/* Responsividade: Ajustes para telas pequenas */
+@media screen and (max-width: 768px) {
+  .nav {
+    height: 15vh; /* Ajuste para caber melhor no mobile */
+  }
 
-.nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0%; /* Inicialmente a largura é 0 */
-    height: 2px;
-    background-color: #f13232;
-    transition: width 0.3s ease-in-out; /* Transição suave de expansão */
-}
+  .nav img {
+    height: 60px;
+  }
 
-.nav a:hover::after {
-    width: 100%; /* A linha vai preencher a largura total do link */
-}
+  .nav a {
+    font-size: 18px; /* Reduzindo o tamanho das fontes */
+  }
 
+  .nav ul {
+    flex-direction: column;
+    justify-content: center;
+  }
 
+  .footer-button {
+    font-size: 1em; /* Ajustando o tamanho do botão */
+    padding: 8px 16px;
+  }
 
-
-button {
-    padding: 15px 50px;
-    background-color: black;
-    color: #f13232;
-    border:2px white solid;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 20px;
-    transition: background 0.3s ease;
+  .menu-hamburguer {
+    display: block;
+  }
 }
 
 /* HERO SECTION */
 .hero {
-    background-image: url('../img/ambitious-studio-rick-barrett-1RNQ11ZODJM-unsplash.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    color: #f13232;
+  background-image: url("../img/ambitious-studio-rick-barrett-1RNQ11ZODJM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: #f13232;
 }
 
 .hero h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
-    margin-top: -540px;
+  font-size: 4em;
+  margin-bottom: 10px;
+  margin-top: -540px;
 }
 
 .hero p {
-    font-size: 2em;
-    margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-/* BENEFICIOS */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em; /* Ajustando o tamanho do título */
+    margin-top: 0;
+  }
+
+  .hero p {
+    font-size: 1.5em; /* Ajustando o tamanho da descrição */
+  }
+}
+
+/* BENEFÍCIOS */
 .beneficios {
-    height: 100vh;
+  height: 100vh;
 }
 
 .img-beneficios {
-    display: flex;
-    justify-content:flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .img-beneficios img {
-    width: 400px;
-    height: auto;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-    margin-left: 300px; /* Ajuste esse valor para mover mais ou menos */
+  width: 400px;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-left: 300px;
 }
 
-.conteudo-beneficios { 
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    flex-direction: row;
+.conteudo-beneficios {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  flex-direction: row;
 }
 
 .texto-beneficios {
-    display: flex;
-    justify-content: center; /* Centraliza no eixo horizontal */
-    width: 50%;
-    padding: 220px; 
-    margin: 0 auto; /* Centraliza no meio da tela */
-    font-size: 20px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  padding: 220px;
+  margin: 0 auto;
+  font-size: 20px;
 }
 
 .text-beneficio {
-    display: flex;
-    justify-content: center;
-    padding: 70px;
-    color: #f13232;
-    font-size: 50px;
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+  color: #f13232;
+  font-size: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .conteudo-beneficios {
+    flex-direction: column; /* Empilhando as seções para telas menores */
+    padding: 20px;
+  }
+
+  .img-beneficios img {
+    width: 80%; /* Aumentando a responsividade da imagem */
+    margin-left: 0;
+  }
+
+  .texto-beneficios {
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .text-beneficio {
+    font-size: 2em;
+  }
 }
 
 /* LUTAS */
 .lutas {
-    height: 100vh; /* Garante que a altura da seção seja 100% da altura da tela */
-    display: flex;
-    background-image: url("../img/tatame2.jpg"); /* Defina corretamente a URL da imagem */
-    background-size: cover; /* A imagem ocupa toda a área disponível */
-    background-position: center; /* Garante que a imagem fique centralizada */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  height: 100vh;
+  display: flex;
+  background-image: url("../img/tatame2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .conteudo-lutas {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  /* Garante que a imagem fique à direita e o texto à esquerda */
-    gap: 20px; /* Espaçamento entre o texto e a imagem */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .texto-lutas {
-    display: flex;
-    justify-content: flex-start; /* Muda para o início para alinhar à esquerda */
-    width: 50%;
-    padding: 220px;
-    margin-left: -50px; /* Adiciona margem negativa para afastar mais o texto da figura */
-    font-size: 20px;
-    color: white;
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 220px;
+  margin-left: -50px;
+  font-size: 20px;
+  color: white;
 }
 
-
 .img-lutas {
-    width: 250px; /* Tamanho ajustável */
-    height: auto;
-    max-width: 100%;
-    border-radius: 20px;
-    margin-right: 90px;
+  width: 250px;
+  height: auto;
+  max-width: 100%;
+  border-radius: 20px;
+  margin-right: 90px;
 }
 
 .text-luta {
-    color: #f13232; /* Cor branca para o título */
-    font-size: 36px; /* Ajuste o tamanho do texto conforme necessário */
-    text-align: center; /* Centraliza o texto */
-    font-family: "Righteous", sans-serif;
-    padding-top: 80px;
+  color: #f13232;
+  font-size: 36px;
+  text-align: center;
+  font-family: "Righteous", sans-serif;
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .conteudo-lutas {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .img-lutas {
+    width: 100%; /* Aumenta a largura da imagem */
+    margin-right: 0;
+  }
+
+  .texto-lutas {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .text-luta {
+    font-size: 2.5em;
+  }
 }
 
 /* SOBRE A ACADEMIA */
 .sobre-academia {
-    background-color: #f4f4f4; /* Cor de fundo suave */
-    padding: 40px 20px;
-    text-align: center;
-    max-width: 100vh;
-    margin: 0 auto;
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    
+  background-color: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+  max-width: 100vh;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-academia h1 {
-    font-size: 2.5em;
-    color: #f13232;
-    margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #f13232;
+  margin-bottom: 20px;
 }
 
 .sobre-academia p {
-    font-size: 1.2em;
-    color: #555; /* Cor do texto */
-    line-height: 1.6; /* Espaçamento entre as linhas */
-    max-width: 900px;
-    margin: 0 auto;
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .imagem-sobre {
-    width: 100%;
-    height: auto;
-    max-width: 900px; /* Tamanho máximo da imagem */
-    margin-top: 30px; /* Espaço entre o texto e a imagem */
-    border-radius: 8px; /* Bordas arredondadas na imagem */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave na imagem */
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  margin-top: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.text-contact {
-    color: #f13232;
-}
-.text-links {
-    color: #f13232;
-}
-
-/* Responsividade */
 @media screen and (max-width: 768px) {
-    .sobre-academia {
-        padding: 30px 15px;
-    }
+  .sobre-academia {
+    padding: 20px 15px;
+  }
 
-    .sobre-academia h1 {
-        font-size: 2em;
-    }
+  .sobre-academia h1 {
+    font-size: 2em;
+  }
 
-    .sobre-academia p {
-        font-size: 1em;
-    }
+  .sobre-academia p {
+    font-size: 1em;
+  }
 
-    .imagem-sobre {
-        max-width: 100%;
-        margin-top: 20px; /* Menos espaço no mobile */
-    }
+  .imagem-sobre {
+    max-width: 100%;
+    margin-top: 20px;
+  }
 }
 
 /* FOOTER */
-/* Estilos gerais do footer */
 .footer {
-    background-color: black; /* Cor de fundo escura */
-    color: #fff; /* Cor do texto */
-    padding: 40px 20px;
-    text-align: center;
+  background-color: black;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    align-items: center; /* Centraliza verticalmente os itens */
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer-logo img {
-    width: 150px; /* Ajuste o tamanho conforme necessário */
-    height: auto;
+  width: 150px;
 }
 
 .footer-links {
-    text-align: center;
+  text-align: center;
 }
 
 .footer-links h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .footer-links ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center; /* Alinha os links ao centro */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-links ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-    position: relative; /* Necessário para adicionar o efeito de linha */
-    padding: 0 5px; /* Pequeno espaçamento nas laterais */
-}
-
-.footer-links ul li a:hover {
-    color: #f13232; /* Cor ao passar o mouse */
-}
-
-/* Adicionando a linha embaixo do link */
-.footer-links ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px; /* Distância da linha para o texto */
-    left: 0;
-    width: 0%; /* Inicialmente a largura é 0 */
-    height: 2px;
-    background-color: #f13232; /* Cor da linha */
-    transition: width 0.3s ease-in-out; /* Transição suave de expansão */
-}
-
-.footer-links ul li a:hover::after {
-    width: 100%; /* A linha vai preencher a largura total do link */
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
 .footer-contact {
-    text-align: center;
+  text-align: center;
 }
 
 .footer-contact h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .footer-contact p {
-    font-size: 1.1em;
-    margin: 5px 0;
+  font-size: 1.1em;
+  margin: 5px 0;
 }
 
 .footer-bottom {
-    background-color: #222;
-    padding: 10px;
-    font-size: 1em;
+  background-color: #222;
+  padding: 10px;
+  font-size: 1em;
 }
 
 .footer-bottom p {
-    margin: 0;
+  margin: 0;
 }
 
-
-/* Responsividade */
 @media screen and (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .footer-logo img {
-        width: 120px; /* Tamanho da logo para dispositivos móveis */
-    }
+  .footer-logo img {
+    width: 120px;
+  }
 
-    .footer-links ul {
-        flex-direction: column; /* Coloca os links em coluna em telas pequenas */
-    }
+  .footer-links ul {
+    flex-direction: column;
+  }
 
-    .footer-links ul li {
-        margin: 10px 0; /* Ajusta o espaçamento para tela menor */
-    }
+  .footer-links ul li {
+    margin: 10px 0;
+  }
 
-    .footer-contact p {
-        font-size: 1em;
-    }
+  .footer-contact p {
+    font-size: 1em;
+  }
+}
+
+/* Estilo básico do botão */
+.footer-button {
+  background-color: #ff6f61; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: 2px solid transparent; /* Borda inicial transparente */
+  padding: 10px 20px; /* Padding do botão */
+  font-size: 1.2em;
+  text-transform: uppercase;
+  cursor: pointer; /* Muda o cursor para indicar interatividade */
+  position: relative; /* Necessário para o efeito da borda */
+  overflow: hidden; /* Garante que o efeito não ultrapasse os limites do botão */
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Efeito ao passar o mouse */
+.footer-button:hover {
+  background-color: #fff; /* Cor de fundo ao passar o mouse */
+  color: #f13232; /* Cor do texto ao passar o mouse */
+  border-color: #f13232; /* Borda ao passar o mouse */
+}
+
+/* Efeito de borda animada */
+.footer-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: #f13232; /* Cor da borda */
+  transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease; /* Animação da expansão */
+  border-radius: 60%;
+  z-index: 0; /* Coloca a animação atrás do texto */
+  transform: translate(-50%, -53%); /* Centraliza a animação */
+}
+
+/* Efeito da borda expandindo ao passar o mouse */
+.footer-button:hover::before {
+  width: 500%;
+  height: 500%;
+  top: -150%;
+  left: -150%;
+}
+
+.footer-button span {
+  position: relative;
+  z-index: 1; /* Garante que o texto fique acima da animação */
 }
