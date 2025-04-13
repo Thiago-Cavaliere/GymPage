@@ -16,4 +16,4 @@ O **SiteGym** é um projeto de academia desenvolvido com HTML e CSS, com o objet
 Clone este repositório para o seu computador:
 
 ```bash
-git clone https://github.com/seu-usuario/site-gym.git
+git clone https://github.com/seu-usuario/GymPage.git
