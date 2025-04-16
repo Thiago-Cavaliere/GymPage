@@ -12,6 +12,10 @@ O **SiteGym** é um projeto de academia desenvolvido com HTML e CSS, com o objet
 - **Design Limpo e Intuitivo**: A interface visual foi projetada para facilitar a navegação, destacando informações essenciais.
 - **Informações de Contato**: A página inclui uma seção com detalhes de contato, como telefone, e-mail e localização da academia.
 
+## 📸 GIF do Projeto
+![Demonstração do Projeto](./public/assets/GymPage.gif)
+
+
 ## 💡 Como Usar
 Clone este repositório para o seu computador:
 
