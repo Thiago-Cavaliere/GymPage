@@ -1,14 +1,15 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  font-family: "Titillium Web", serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 /* NAVBAR */
@@ -18,16 +19,16 @@ body {
   width: 100%;
   height: 10vh;
   background-color: black;
-  padding: 0 10px; /* Ajuste da margem para pequenos dispositivos */
+  padding: 0 20px;
 }
 
 .nav ul {
   display: flex;
-  list-style-type: none;
+  list-style: none;
   width: 100%;
-  justify-content: space-between;
   align-items: center;
-  padding: 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .nav li {
@@ -35,403 +36,243 @@ body {
 }
 
 .nav img {
-  height: 80px;
+  height: 60px;
 }
 
 .nav a {
   text-decoration: none;
   color: #f13232;
-  font-size: 25px;
-  position: relative;
+  font-size: 1.2rem;
 }
 
-/* Responsividade: Ajustes para telas pequenas */
-@media screen and (max-width: 768px) {
-  .nav {
-    height: 15vh; /* Ajuste para caber melhor no mobile */
-  }
-
-  .nav img {
-    height: 60px;
-  }
-
-  .nav a {
-    font-size: 18px; /* Reduzindo o tamanho das fontes */
-  }
-
-  .nav ul {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .footer-button {
-    font-size: 1em; /* Ajustando o tamanho do botão */
-    padding: 8px 16px;
-  }
-
-  .menu-hamburguer {
-    display: block;
-  }
-}
-
-/* HERO SECTION */
+/* HERO */
 .hero {
   background-image: url("../img/ambitious-studio-rick-barrett-1RNQ11ZODJM-unsplash.jpg");
   background-size: cover;
   background-position: center;
   height: 90vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  flex-direction: column;
   color: #f13232;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 4em;
+  font-size: 3rem;
   margin-bottom: 10px;
-  margin-top: -540px;
 }
 
 .hero p {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .hero h1 {
-    font-size: 2em; /* Ajustando o tamanho do título */
-    margin-top: 0;
-  }
-
-  .hero p {
-    font-size: 1.5em; /* Ajustando o tamanho da descrição */
-  }
+  font-size: 1.5rem;
 }
 
 /* BENEFÍCIOS */
 .beneficios {
-  height: 100vh;
+  padding: 60px 20px;
+  background-color: #f8f8f8;
 }
 
-.img-beneficios {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.img-beneficios img {
-  width: 400px;
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-  margin-left: 300px;
+.text-beneficio {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f13232;
+  margin-bottom: 40px;
 }
 
 .conteudo-beneficios {
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  flex-direction: row;
+}
+
+.img-beneficios img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
 }
 
 .texto-beneficios {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  padding: 220px;
-  margin: 0 auto;
-  font-size: 20px;
-}
-
-.text-beneficio {
-  display: flex;
-  justify-content: center;
-  padding: 70px;
-  color: #f13232;
-  font-size: 50px;
-}
-
-@media screen and (max-width: 768px) {
-  .conteudo-beneficios {
-    flex-direction: column; /* Empilhando as seções para telas menores */
-    padding: 20px;
-  }
-
-  .img-beneficios img {
-    width: 80%; /* Aumentando a responsividade da imagem */
-    margin-left: 0;
-  }
-
-  .texto-beneficios {
-    padding: 20px;
-    font-size: 16px;
-    width: 100%;
-  }
-
-  .text-beneficio {
-    font-size: 2em;
-  }
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* LUTAS */
 .lutas {
-  height: 100vh;
-  display: flex;
+  padding: 60px 20px;
   background-image: url("../img/tatame2.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  color: white;
+}
+
+.text-luta {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f13232;
+  margin-bottom: 40px;
 }
 
 .conteudo-lutas {
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.texto-lutas {
-  display: flex;
-  justify-content: flex-start;
-  width: 50%;
-  padding: 220px;
-  margin-left: -50px;
-  font-size: 20px;
-  color: white;
 }
 
 .img-lutas {
-  width: 250px;
-  height: auto;
-  max-width: 100%;
+  width: 100%;
+  max-width: 300px;
   border-radius: 20px;
-  margin-right: 90px;
 }
 
-.text-luta {
-  color: #f13232;
-  font-size: 36px;
-  text-align: center;
-  font-family: "Righteous", sans-serif;
-  padding-top: 80px;
+.texto-lutas {
+  max-width: 600px;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-@media screen and (max-width: 768px) {
-  .conteudo-lutas {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .img-lutas {
-    width: 100%; /* Aumenta a largura da imagem */
-    margin-right: 0;
-  }
-
-  .texto-lutas {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .text-luta {
-    font-size: 2.5em;
-  }
-}
-
-/* SOBRE A ACADEMIA */
+/* SOBRE */
 .sobre-academia {
+  padding: 60px 20px;
   background-color: #f4f4f4;
-  padding: 40px 20px;
   text-align: center;
-  max-width: 100vh;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .sobre-academia h1 {
-  font-size: 2.5em;
+  font-size: 2.5rem;
   color: #f13232;
   margin-bottom: 20px;
 }
 
 .sobre-academia p {
-  font-size: 1.2em;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
   color: #555;
   line-height: 1.6;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .imagem-sobre {
   width: 100%;
-  height: auto;
-  max-width: 900px;
-  margin-top: 30px;
-  border-radius: 8px;
+  max-width: 800px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-@media screen and (max-width: 768px) {
-  .sobre-academia {
-    padding: 20px 15px;
-  }
-
-  .sobre-academia h1 {
-    font-size: 2em;
-  }
-
-  .sobre-academia p {
-    font-size: 1em;
-  }
-
-  .imagem-sobre {
-    max-width: 100%;
-    margin-top: 20px;
-  }
+  margin: 0 auto;
+  display: block;
 }
 
 /* FOOTER */
 .footer {
   background-color: black;
-  color: #fff;
+  color: white;
   padding: 40px 20px;
   text-align: center;
 }
 
 .footer-content {
   display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 .footer-logo img {
-  width: 150px;
+  width: 120px;
 }
-
 .footer-links {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
 }
 
 .footer-links h3 {
-  font-size: 1.5em;
+  font-family: "Righteous", sans-serif;
+  font-size: 20px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .footer-links ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  justify-content: center;
 }
 
 .footer-links ul li {
-  margin: 0 15px;
+  margin-bottom: 8px;
 }
 
 .footer-links ul li a {
-  color: #fff;
   text-decoration: none;
-  font-size: 1.1em;
+  color: #ccc;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #f5c542;
 }
 
 .footer-contact {
-  text-align: center;
-}
-
-.footer-contact h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-contact p {
-  font-size: 1.1em;
   margin: 5px 0;
 }
 
 .footer-bottom {
   background-color: #222;
   padding: 10px;
-  font-size: 1em;
+  font-size: 0.9rem;
 }
 
-.footer-bottom p {
-  margin: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-logo img {
-    width: 120px;
-  }
-
-  .footer-links ul {
-    flex-direction: column;
-  }
-
-  .footer-links ul li {
-    margin: 10px 0;
-  }
-
-  .footer-contact p {
-    font-size: 1em;
-  }
-}
-
-/* Estilo básico do botão */
 .footer-button {
-  background-color: #ff6f61; /* Cor de fundo */
-  color: white; /* Cor do texto */
-  border: 2px solid transparent; /* Borda inicial transparente */
-  padding: 10px 20px; /* Padding do botão */
-  font-size: 1.2em;
-  text-transform: uppercase;
-  cursor: pointer; /* Muda o cursor para indicar interatividade */
-  position: relative; /* Necessário para o efeito da borda */
-  overflow: hidden; /* Garante que o efeito não ultrapasse os limites do botão */
-  transition: all 0.3s ease; /* Transição suave */
+  background-color: #f13232;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 4px;
 }
 
-/* Efeito ao passar o mouse */
 .footer-button:hover {
-  background-color: #fff; /* Cor de fundo ao passar o mouse */
-  color: #f13232; /* Cor do texto ao passar o mouse */
-  border-color: #f13232; /* Borda ao passar o mouse */
+  background-color: #fff;
+  color: #f13232;
+  border: 1px solid #f13232;
 }
 
-/* Efeito de borda animada */
-.footer-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background-color: #f13232; /* Cor da borda */
-  transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease; /* Animação da expansão */
-  border-radius: 60%;
-  z-index: 0; /* Coloca a animação atrás do texto */
-  transform: translate(-50%, -53%); /* Centraliza a animação */
-}
+/* RESPONSIVO */
+@media screen and (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-/* Efeito da borda expandindo ao passar o mouse */
-.footer-button:hover::before {
-  width: 500%;
-  height: 500%;
-  top: -150%;
-  left: -150%;
-}
+  .conteudo-beneficios,
+  .conteudo-lutas {
+    flex-direction: column;
+  }
 
-.footer-button span {
-  position: relative;
-  z-index: 1; /* Garante que o texto fique acima da animação */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
 }
